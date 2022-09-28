@@ -1,0 +1,60 @@
+@use "sass:map";
+@use "sass:math";
+
+$colors: () !default;
+$colors: map.deep-merge(
+  (
+    "white": #ffffff,
+    "black": #000000,
+    "primary": (
+      "base": #409eff,
+    ),
+    "success": (
+      "base": #67c23a,
+    ),
+    "warning": (
+      "base": #e6a23c,
+    ),
+    "danger": (
+      "base": #f56c6c,
+    ),
+    "error": (
+      "base": #f56c6c,
+    ),
+    "info": (
+      "base": #909399,
+    ),
+  ),
+  $colors
+);
+
+// Generate light and dark variants
+@each $type, $val in $colors {
+  @if $type != "white" and $type != "black" {
+    @for $i from 1 through 9 {
+      $colors: map.deep-merge(
+        (
+          $type: (
+            "light-#{$i}":
+              mix(
+                map.get($colors, "white"),
+                map.get($val, "base"),
+                math.percentage(math.div($i, 10))
+              ),
+            "dark-#{$i}":
+              mix(
+                map.get($colors, "black"),
+                map.get($val, "base"),
+                math.percentage(math.div($i, 10))
+              ),
+          ),
+        ),
+        $colors
+      );
+    }
+  }
+}
+
+$header-height: 60px;
+
+$bg-color: #f7f8fa;
