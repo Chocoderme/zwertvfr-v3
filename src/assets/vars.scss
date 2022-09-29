@@ -28,6 +28,17 @@ $colors: map.deep-merge(
   $colors
 );
 
+$text-colors: () !default;
+$text-colors: map.deep-merge(
+  (
+    "title": (
+      "base": #434e5e,
+    ),
+    "base": #434e5e,
+  ),
+  $text-colors
+);
+
 // Generate light and dark variants
 @each $type, $val in $colors {
   @if $type != "white" and $type != "black" {

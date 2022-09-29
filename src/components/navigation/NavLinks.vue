@@ -57,8 +57,10 @@ const navigateTo = (path: string) => {
 };
 
 onMounted(() => {
-  mouseOverLink(-1);
-  setTimeout(() => update(), 100);
+  setTimeout(() => {
+    update();
+    mouseOverLink(-1);
+  }, 100);
 });
 router.afterEach(() => {
   setTimeout(() => update(), 100);

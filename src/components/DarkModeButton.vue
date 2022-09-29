@@ -1,7 +1,9 @@
 <template>
   <span class="toggle-dark-mode-btn" @click="toggleDarkMode">
+    <!-- <transition name="fade-in-fast" mode="out-in"> -->
     <SunIcon v-if="!darkMode" />
     <MoonIcon v-else />
+    <!-- </transition> -->
   </span>
 </template>
 

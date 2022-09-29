@@ -1,5 +1,7 @@
 <template>
-  <div class="hero-presentation">HERO</div>
+  <div class="hero-presentation">
+    <div class="container"><slot /></div>
+  </div>
 </template>
 
 <style lang="ts" setup></style>
@@ -14,6 +16,7 @@
   color: var(--el-color-white);
   padding-top: 3rem !important;
   padding-bottom: 3rem !important;
+  transition: all 0.3s ease-in-out;
 }
 
 html.dark {

@@ -2,7 +2,7 @@
 
 <template>
   <div class="home" style="height: 200vh">
-    <HeroPresentation />
+    <HeroPresentation> Projects </HeroPresentation>
   </div>
 </template>
 

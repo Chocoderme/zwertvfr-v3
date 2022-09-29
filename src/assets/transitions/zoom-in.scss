@@ -1,0 +1,8 @@
+.zoom-in-enter-active,
+.zoom-in-leave-active {
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+}
+.zoom-in-enter-from,
+.zoom-in-leave-to {
+  transform: scale(0) !important;
+}

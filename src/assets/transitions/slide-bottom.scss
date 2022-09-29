@@ -1,0 +1,17 @@
+.slide-bottom-enter-active,
+.slide-bottom-leave-active {
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+}
+.slide-bottom-enter-from,
+.slide-bottom-leave-to {
+  transform: translateY(100%) !important;
+}
+
+.slide-bottom-fast-enter-active,
+.slide-bottom-fast-leave-active {
+  transition: all 0.2s cubic-bezier(0.55, 0, 0.1, 1);
+}
+.slide-bottom-fast-enter-from,
+.slide-bottom-fast-leave-to {
+  transform: translateY(100%) !important;
+}

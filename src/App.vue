@@ -3,9 +3,9 @@
     <NavigationBar />
     <main>
       <RouterView v-slot="{ Component }">
-        <transition name="el-fade-in">
-          <component :is="Component" />
-        </transition>
+        <!-- <transition name="fade-in" mode="out-in"> -->
+        <component :is="Component" />
+        <!-- </transition> -->
       </RouterView>
     </main>
     <!-- <Footer /> -->

@@ -1,0 +1,26 @@
+.fade-in-enter-active,
+.fade-in-leave-active {
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+}
+.fade-in-enter-from,
+.fade-in-leave-to {
+  opacity: 0 !important;
+}
+
+.fade-in-fast-enter-active,
+.fade-in-fast-leave-active {
+  transition: all 0.2s cubic-bezier(0.55, 0, 0.1, 1);
+}
+.fade-in-fast-enter-from,
+.fade-in-fast-leave-to {
+  opacity: 0;
+}
+
+.fade-in-slow-enter-active,
+.fade-in-slow-leave-active {
+  transition: all 0.4s cubic-bezier(0.55, 0, 0.1, 1);
+}
+.fade-in-slow-enter-from,
+.fade-in-slow-leave-to {
+  opacity: 0;
+}

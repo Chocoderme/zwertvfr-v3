@@ -9,4 +9,14 @@ body {
 body {
   font-family: "Roboto", sans-serif;
   background-color: $bg-color;
+  transition: background-color 0.3s ease-in-out;
 }
+
+html.dark {
+  body {
+    background-color: #333;
+  }
+}
+
+@import "./container.scss";
+@import "./transitions/index.scss";
