@@ -5,7 +5,14 @@
       @mouseenter="detailedOverlayVisible = true"
       @mouseleave="detailedOverlayVisible = false"
     >
-      <img v-if="_project.image" :src="_project.image" alt="project image" />
+      <transition name="fade-in-fast" mode="out-in">
+        <img
+          :key="_project.image"
+          v-if="_project.image"
+          :src="_project.image"
+          alt="project image"
+        />
+      </transition>
       <transition name="fade-in-fast">
         <div class="title-overlay" v-if="!detailedOverlayVisible">
           <transition name="fade-in-fast" mode="out-in">
@@ -26,7 +33,9 @@
       </transition>
     </div>
     <div class="card-footer">
-      <ProjectTags :tags="_project.tags" />
+      <transition name="fade-in-fast" mode="out-in">
+        <ProjectTags :tags="_project.tags" :key="_project.title" />
+      </transition>
     </div>
   </div>
 </template>

@@ -66,7 +66,6 @@ export const useProjectStore = defineStore("project", () => {
   ]);
 
   const tags = ref<Tag[]>([
-    { label: "All", values: [] },
     { label: "Angular", values: ["Angular"] },
     { label: "React", values: ["React"] },
     { label: "Python/Django", values: ["Python", "Django"] },
@@ -76,21 +75,23 @@ export const useProjectStore = defineStore("project", () => {
     { label: "Frontend", values: ["Frontend"] },
     { label: "Backend", values: ["Backend"] },
   ]);
-  const activeTag = ref<Tag | undefined>(tags.value[0]);
+  const activeTags = ref<Tag[]>([]);
 
   const activeProjects = computed(() =>
-    activeTag.value === undefined || activeTag.value.label === "All"
+    activeTags.value.length <= 0
       ? projects.value
       : projects.value.filter((p) =>
           p.tags
             .map((t) => t.toLowerCase())
             .some((t) =>
-              activeTag.value?.values
-                .map((v) => v.toLowerCase())
-                .some((v) => t.split("/").includes(v))
+              activeTags.value.some((activeTag) =>
+                activeTag.values
+                  .map((v) => v.toLowerCase())
+                  .some((v) => t.split("/").includes(v))
+              )
             )
         )
   );
 
-  return { projects, tags, activeTag, activeProjects };
+  return { projects, tags, activeTags, activeProjects };
 });

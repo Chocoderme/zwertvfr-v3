@@ -1,21 +1,55 @@
 <template>
-  <ul class="filters">
-    <li
-      v-for="tag of tags"
-      class="filter"
-      :class="{ active: tag === projectStore.activeTag }"
-      @click="projectStore.activeTag = tag"
-    >
-      {{ tag.label }}
-    </li>
-  </ul>
+  <div>
+    <ul class="filters">
+      <li
+        v-for="tag of tags.filter(
+          (t) => !['Frontend', 'Backend'].includes(t.label)
+        )"
+        class="filter"
+        :class="{
+          active:
+            (tag.label === 'All' && projectStore.activeTags.length === 0) ||
+            tag === projectStore.activeTags[0],
+        }"
+        @click="tagClicked(tag)"
+      >
+        {{ tag.label }}
+      </li>
+    </ul>
+    <ul class="filters">
+      <li
+        v-for="tag of tags.filter((t) =>
+          ['Frontend', 'Backend'].includes(t.label)
+        )"
+        class="filter"
+        :class="{
+          active:
+            (tag.label === 'All' && projectStore.activeTags.length === 0) ||
+            tag === projectStore.activeTags[0],
+        }"
+        @click="tagClicked(tag)"
+      >
+        {{ tag.label }}
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script lang="ts" setup>
 import { useProjectStore } from "@/stores/project";
 
 const projectStore = useProjectStore();
-const tags = computed(() => projectStore.tags);
+const tags = computed(() => [
+  { label: "All", values: [] },
+  ...projectStore.tags,
+]);
+const tagClicked = (tag: typeof tags.value[number]) => {
+  if (tag.label === "All") {
+    projectStore.activeTags = [];
+  } else {
+    projectStore.activeTags = [tag];
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -32,6 +66,7 @@ const tags = computed(() => projectStore.tags);
   width: 100%;
   margin: 0;
   padding: 0;
+  margin-bottom: 1rem;
 
   .filter {
     display: block;
