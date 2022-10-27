@@ -1,4 +1,31 @@
 @use "./vars.scss" as *;
+@use "sass:map";
+
+@function is-map($var){
+  @return type-of($var) == 'map';
+}
+
+@function deep-map-to-css-var($key, $var) {
+  $res: ();
+  @each $color, $value in $var {
+    @if is-map($value) {
+      $res: map.merge($res, deep-map-to-css-var('#{$key}-#{$color}', $value))
+    }
+    @else {
+      $res: map.set($res, "#{$key}-#{$color}", $value);
+    }
+  }
+  @return $res;
+}
+
+:root {
+  @each $key, $val in deep-map-to-css-var('--color', $colors) {
+    #{$key}: #{$val};
+  }
+  @each $key, $val in deep-map-to-css-var('--text-color', $text-colors) {
+    #{$key}: #{$val};
+  }
+}
 
 html,
 body {
@@ -20,3 +47,4 @@ html.dark {
 
 @import "./container.scss";
 @import "./transitions/index.scss";
+

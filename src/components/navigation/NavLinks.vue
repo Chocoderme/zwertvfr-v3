@@ -1,23 +1,13 @@
 <template>
   <ul class="nav-links" @mouseleave="mouseOverLink(-1)">
-    <li
-      v-for="(lnk, index) of navLinks"
-      :key="index"
-      class="nav-link"
-      :class="{ active: route.path === lnk.url }"
-      :ref="linkRefs.set"
-      @mouseover="mouseOverLink(index)"
-      @click.stop="navigateTo(lnk.url)"
-    >
+    <li v-for="(lnk, index) of navLinks" :key="index" class="nav-link" :class="{ active: route.path === lnk.url }"
+      :ref="linkRefs.set" @mouseover="mouseOverLink(index)" @click.stop="navigateTo(lnk.url)">
       {{ lnk.name }}
     </li>
-    <div
-      :style="{
-        width: `${width}px`,
-        left: `${left}px`,
-      }"
-      class="link-slider"
-    />
+    <div :style="{
+      width: `${width}px`,
+      left: `${left}px`,
+    }" class="link-slider" />
   </ul>
 </template>
 
@@ -63,7 +53,10 @@ onMounted(() => {
   }, 100);
 });
 router.afterEach(() => {
-  setTimeout(() => update(), 100);
+  setTimeout(() => {
+    update();
+    mouseOverLink(-1);
+  }, 100);
 });
 </script>
 
@@ -83,6 +76,7 @@ router.afterEach(() => {
   align-items: center;
   height: 100%;
   gap: 5px;
+
   .nav-link {
     color: rgba(map.get($colors, "white"), 0.55);
     cursor: pointer;

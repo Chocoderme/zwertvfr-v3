@@ -14,20 +14,40 @@
 @media (min-width: 768px) {
   .container {
     max-width: 720px;
+
+    &.small {
+      padding-right: calc(10rem * 0.5);
+      padding-left: calc(10rem * 0.5);
+    }
   }
 }
 @media (min-width: 992px) {
   .container {
     max-width: 960px;
+
+    &.small {
+      padding-right: calc(10rem * 0.5);
+      padding-left: calc(10rem * 0.5);
+    }
   }
 }
 @media (min-width: 1200px) {
   .container {
     max-width: 1140px;
+
+    &.small {
+      padding-right: calc(15rem * 0.5);
+      padding-left: calc(15rem * 0.5);
+    }
   }
 }
 @media (min-width: 1400px) {
   .container {
     max-width: 1320px;
+
+    &.small {
+      padding-right: calc(20rem * 0.5);
+      padding-left: calc(20rem * 0.5);
+    }
   }
 }

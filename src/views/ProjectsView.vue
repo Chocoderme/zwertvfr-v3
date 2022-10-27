@@ -23,21 +23,6 @@
   box-sizing: border-box;
   position: relative;
 
-  h1 {
-    font-weight: bold;
-    font-size: 2rem;
-    padding: 0;
-    margin: 0;
-    margin-bottom: 1rem;
-    color: map.get($colors, "white");
-  }
-
-  .page-heading {
-    max-width: 700px;
-    font-size: 1.25rem;
-    color: map.get($colors, "white");
-  }
-
   section {
     padding-top: 3rem;
   }

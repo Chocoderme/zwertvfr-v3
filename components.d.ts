@@ -7,6 +7,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Avatar: typeof import('./src/components/Avatar.vue')['default']
     Badge: typeof import('./src/components/Badge.vue')['default']
     DarkModeButton: typeof import('./src/components/DarkModeButton.vue')['default']
     HeroPresentation: typeof import('./src/components/HeroPresentation.vue')['default']
@@ -19,5 +20,6 @@ declare module '@vue/runtime-core' {
     ProjectTags: typeof import('./src/components/projects/ProjectTags.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SpeechCard: typeof import('./src/components/SpeechCard.vue')['default']
   }
 }

@@ -1,15 +1,15 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="home" style="height: 200vh">
+  <div class="resume">
     <HeroPresentation>
-      <h1>Home</h1>
+      <h1>Resume</h1>
     </HeroPresentation>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.home {
+.resume {
   box-sizing: border-box;
   position: relative;
 }
