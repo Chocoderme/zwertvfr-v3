@@ -49,6 +49,16 @@ export const useProjectStore = defineStore("project", () => {
       image: import.meta.env.BASE_URL + "portfolio/koaekodoc.png",
     },
     {
+      title: "CV en ligne (V2)",
+      type: "Website",
+      tags: ["Vue3", "Typescript", "Pinia", "HTML/SCSS", "Frontend"],
+      summary: "Mon site personnel (version actuelle)",
+      links: [
+        { icon: "github", url: "https://github.com/shoko31/zwertvfr-v3" },
+        { icon: "url", url: "https://me.zwertv.fr" },
+      ],
+    },
+    {
       title: "CV en ligne (V1)",
       type: "Website",
       tags: ["HTML/CSS", "Javascript", "Frontend"],
@@ -57,19 +67,86 @@ export const useProjectStore = defineStore("project", () => {
       image: import.meta.env.BASE_URL + "portfolio/website_vignette.png",
     },
     {
-      title: "CV en ligne (V2)",
+      title: "CerealSquad",
+      type: "Game",
+      tags: ["C#", "SFML.NET", "Game Dev"],
+      summary: "Mini-jeu multijoueur développé en 4 mois en C# avec SFML.NET",
+      links: [
+        { icon: "github", url: "https://github.com/shoko31/CerealSquad" },
+      ],
+      image: import.meta.env.BASE_URL + "portfolio/cerealsquad_vignette.png",
+    },
+    {
+      title: "CerealSquad Terrain Builder",
+      type: "Game tool",
+      tags: ["C#", "SFML.NET", "Game Dev"],
+      summary: "Constructeur de terrain pour le mini-jeu CerealSquad",
+      links: [
+        {
+          icon: "github",
+          url: "https://github.com/shoko31/CerealSquad/tree/dev/TerrainBuilder",
+        },
+      ],
+      image:
+        import.meta.env.BASE_URL +
+        "portfolio/cerealsquad_terrainbuilder_vignette.png",
+    },
+    {
+      title: "Cells Runner",
+      type: "Game",
+      tags: ["Unity", "C#", "Game Dev", "#3days"],
+      summary:
+        "Participation à la Global Game Jam 2018 (Janvier 2018) (thème: Transmission)",
+      links: [
+        {
+          icon: "github",
+          url: "https://github.com/shoko31/CellsRunner",
+        },
+        {
+          icon: "url",
+          url: "https://globalgamejam.org/2018/games/cells-runner",
+        },
+      ],
+      image: import.meta.env.BASE_URL + "portfolio/cellsrunner.png",
+    },
+    {
+      title: "Loki's Tale",
+      type: "Game",
+      tags: ["Unity", "C#", "Game Dev", "#3days"],
+      summary:
+        "Participation à la Ludum Dare 40 (Décembre 2017) (thème: Plus vous en avez, pire c'est)",
+      links: [
+        {
+          icon: "github",
+          url: "https://github.com/shoko31/LokisTale",
+        },
+        {
+          icon: "url",
+          url: "https://chocoderme.itch.io/lokis-tale",
+        },
+      ],
+      image: import.meta.env.BASE_URL + "portfolio/lokistale.png",
+    },
+    {
+      title: "uTest",
       type: "Website",
-      tags: ["Vue3", "Typescript", "Pinia", "HTML/SCSS", "Frontend"],
-      summary: "Mon site personnel (version actuelle)",
-      links: [{ icon: "url", url: "https://me.zwertv.fr" }],
+      tags: ["PHP", "HTML/JS/CSS", "School project", "Frontend"],
+      summary:
+        "Plateforme de partage de tests unitaires pour les étudiants d'Epitech",
+      links: [
+        {
+          icon: "github",
+          url: "https://github.com/shoko31/CerealSquad/tree/dev/TerrainBuilder",
+        },
+      ],
+      image: import.meta.env.BASE_URL + "portfolio/utest_vignette.png",
     },
   ]);
 
   const tags = ref<Tag[]>([
-    { label: "Angular", values: ["Angular"] },
-    { label: "React", values: ["React"] },
-    { label: "Python/Django", values: ["Python", "Django"] },
-    { label: "Ruby/Rails", values: ["Ruby", "Rails"] },
+    { label: "Vue", values: ["Vue", "Vue3", "Vue2", "Vue.js"] },
+    { label: "Typescript", values: ["Typescript"] },
+    { label: "Unity/C#", values: ["C#", "Unity"] },
     { label: "PHP", values: ["PHP"] },
     { label: "HTML", values: ["HTML"] },
     { label: "Frontend", values: ["Frontend"] },

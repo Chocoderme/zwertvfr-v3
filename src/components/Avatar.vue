@@ -1,9 +1,9 @@
 <template>
-  <img :src="profilePictureUrl" class="avatar" />
+  <img :src="ProfilePictureUrl" class="avatar" />
 </template>
 
 <script lang="ts" setup>
-const profilePictureUrl = 'https://themes.3rdwavemedia.com/instance/bs5/2.0/assets/images/profile.jpg';
+import ProfilePictureUrl from "@/assets/imgs/elliott_profile.jpg";
 </script>
 
 <style lang="scss" scoped>
@@ -16,5 +16,6 @@ const profilePictureUrl = 'https://themes.3rdwavemedia.com/instance/bs5/2.0/asse
   vertical-align: middle;
   box-sizing: border-box;
   text-align: center;
+  object-fit: cover;
 }
 </style>

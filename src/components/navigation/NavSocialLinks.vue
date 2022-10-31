@@ -1,11 +1,6 @@
 <template>
   <ul class="nav-social-links">
-    <li
-      v-for="(lnk, index) of snsLinks"
-      :key="index"
-      class="nav-social-link"
-      @click.stop="openLink(lnk)"
-    >
+    <li v-for="(lnk, index) of snsLinks" :key="index" class="nav-social-link" @click.stop="openLink(lnk)">
       <component :is="lnk.icon" />
     </li>
   </ul>
@@ -22,7 +17,7 @@ const snsLinks = [
     url: "https://www.linkedin.com/in/elliott-zwertvaegher-8133a590/",
     icon: LinkedInIcon,
   },
-  { title: "Github", url: "https://github.com/Chocoderme", icon: GithubIcon },
+  { title: "Github", url: "https://github.com/shoko31", icon: GithubIcon },
   {
     title: "Stackoverflow",
     url: "https://stackoverflow.com/users/3147985/shoko",
@@ -51,6 +46,7 @@ const openLink = (link: typeof snsLinks[number]) => {
   margin: 0;
   gap: 5px;
   height: 100%;
+
   .nav-social-link {
     color: rgba(map.get($colors, "white"), 1);
     cursor: pointer;

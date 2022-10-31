@@ -1,17 +1,8 @@
 <template>
   <div class="project-card">
-    <div
-      class="card-header"
-      @mouseenter="detailedOverlayVisible = true"
-      @mouseleave="detailedOverlayVisible = false"
-    >
+    <div class="card-header" @mouseenter="detailedOverlayVisible = true" @mouseleave="detailedOverlayVisible = false">
       <transition name="fade-in-fast" mode="out-in">
-        <img
-          :key="_project.image"
-          v-if="_project.image"
-          :src="_project.image"
-          alt="project image"
-        />
+        <img :key="_project.image" v-if="_project.image" :src="_project.image" alt="project image" />
       </transition>
       <transition name="fade-in-fast">
         <div class="title-overlay" v-if="!detailedOverlayVisible">
@@ -94,7 +85,11 @@ const detailedOverlayVisible = ref(false);
       justify-content: center;
       align-items: center;
       padding: 1rem;
-      color: map.get($colors, "white");
+
+      h3 {
+        color: map.get($colors, "white");
+      }
+
       &.fade-in-fast-enter-active {
         transition-delay: 0.3s;
       }
@@ -111,8 +106,12 @@ const detailedOverlayVisible = ref(false);
       align-items: flex-start;
       flex-wrap: wrap;
       padding: 1rem;
-      color: map.get($colors, "white");
       transform: translateY(0%);
+
+      h3,
+      span {
+        color: map.get($colors, "white");
+      }
 
       &.slide-bottom-fast-enter-active {
         transition-delay: 0.3s;

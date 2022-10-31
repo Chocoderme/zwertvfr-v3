@@ -1,17 +1,16 @@
 @use "./vars.scss" as *;
 @use "sass:map";
 
-@function is-map($var){
-  @return type-of($var) == 'map';
+@function is-map($var) {
+  @return type-of($var) == "map";
 }
 
 @function deep-map-to-css-var($key, $var) {
   $res: ();
   @each $color, $value in $var {
     @if is-map($value) {
-      $res: map.merge($res, deep-map-to-css-var('#{$key}-#{$color}', $value))
-    }
-    @else {
+      $res: map.merge($res, deep-map-to-css-var("#{$key}-#{$color}", $value));
+    } @else {
       $res: map.set($res, "#{$key}-#{$color}", $value);
     }
   }
@@ -19,10 +18,10 @@
 }
 
 :root {
-  @each $key, $val in deep-map-to-css-var('--color', $colors) {
+  @each $key, $val in deep-map-to-css-var("--color", $colors) {
     #{$key}: #{$val};
   }
-  @each $key, $val in deep-map-to-css-var('--text-color', $text-colors) {
+  @each $key, $val in deep-map-to-css-var("--text-color", $text-colors) {
     #{$key}: #{$val};
   }
 }
@@ -45,6 +44,27 @@ html.dark {
   }
 }
 
+h3 {
+  display: block;
+  font-size: calc(1.3rem + 0.6vw);
+  color: map.get($text-colors, "title", "base");
+  font-weight: 500;
+  line-height: 1.2;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  margin-top: 0;
+}
+
+a {
+  text-decoration: none;
+  color: map.get($text-colors, "link");
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 @import "./container.scss";
 @import "./transitions/index.scss";
-
