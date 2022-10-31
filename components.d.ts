@@ -12,6 +12,7 @@ declare module '@vue/runtime-core' {
     Card: typeof import('./src/components/Card.vue')['default']
     ContactCard: typeof import('./src/components/ContactCard.vue')['default']
     DarkModeButton: typeof import('./src/components/DarkModeButton.vue')['default']
+    DownloadButton: typeof import('./src/components/DownloadButton.vue')['default']
     HeroPresentation: typeof import('./src/components/HeroPresentation.vue')['default']
     InputElement: typeof import('./src/components/form/InputElement.vue')['default']
     NavigationBar: typeof import('./src/components/navigation/NavigationBar.vue')['default']

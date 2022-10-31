@@ -25,7 +25,7 @@
     </div>
     <div class="card-footer">
       <transition name="fade-in-fast" mode="out-in">
-        <ProjectTags :tags="_project.tags" :key="_project.title" />
+        <ProjectTags :tags="tags" :key="_project.title" />
       </transition>
     </div>
   </div>
@@ -40,6 +40,9 @@ export interface Props {
 const props = defineProps<Props>();
 
 const _project = useVModel(props, "project");
+const tags = computed(() => {
+  return _project.value.date ? [..._project.value.tags, `#${_project.value.date.getFullYear()}`] : _project.value.tags;
+})
 
 const detailedOverlayVisible = ref(false);
 </script>

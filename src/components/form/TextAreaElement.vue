@@ -115,6 +115,7 @@ textarea {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out;
   padding-top: 0.875rem;
   padding-bottom: 0.875rem;
+  font-family: inherit;
 
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
