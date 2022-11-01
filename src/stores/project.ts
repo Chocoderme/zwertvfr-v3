@@ -62,8 +62,7 @@ export const useProjectStore = defineStore("project", () => {
         { icon: "github", url: "https://github.com/shoko31/InKeeperBot" },
       ],
       date: new Date(2019, 11),
-      image:
-        "https://support.discord.com/hc/article_attachments/1500015317842/Rebrand_Blog__1_.png",
+      image: import.meta.env.BASE_URL + "portfolio/discord.png",
     },
     {
       title: "KoaEko",
