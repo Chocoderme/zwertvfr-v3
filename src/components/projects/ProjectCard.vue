@@ -20,7 +20,9 @@
     </div>
     <div class="card-body">
       <transition name="fade-in-fast" mode="out-in">
-        <h4 :key="_project.type">{{ _project.type }}</h4>
+        <h4 :key="_project.type">{{ _project.type }}
+          <ProjectLinks v-if="project.links" :links="project.links" />
+        </h4>
       </transition>
     </div>
     <div class="card-footer">
