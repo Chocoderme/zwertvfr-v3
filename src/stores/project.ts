@@ -42,6 +42,30 @@ export const useProjectStore = defineStore("project", () => {
       image: import.meta.env.BASE_URL + "portfolio/pathfinder.png",
     },
     {
+      title: "Kr Place",
+      type: "Website",
+      tags: ["Vue2", "Javascript", "Vuex", "Frontend"],
+      summary: "Simple website to test your korean level",
+      links: [
+        { icon: "github", url: "https://github.com/shoko31/kr-place" },
+        { icon: "url", url: "https://zwertv.fr/kr-place/#/" },
+      ],
+      date: new Date(2020, 3),
+      image: import.meta.env.BASE_URL + "portfolio/krplace.png",
+    },
+    {
+      title: "InKeeper Bot",
+      type: "Discord bot",
+      tags: ["Python", "Discord BOT", "Backend"],
+      summary: "My first python discord bot with management and fun commands",
+      links: [
+        { icon: "github", url: "https://github.com/shoko31/InKeeperBot" },
+      ],
+      date: new Date(2019, 11),
+      image:
+        "https://support.discord.com/hc/article_attachments/1500015317842/Rebrand_Blog__1_.png",
+    },
+    {
       title: "KoaEko",
       type: "Open-source Library",
       tags: ["Typescript", "Sequelize", "Koa", "Reflect-metadata", "Backend"],
