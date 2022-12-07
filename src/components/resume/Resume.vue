@@ -6,7 +6,8 @@
       <!-- // Infos -->
       <div class="infos">
         <div class="personal-infos">
-          <h1>Elliott Zwertvaegher</h1>
+          <h1 class="name">Elliott Zwertvaegher</h1>
+          <p class="job-title">Developer</p>
         </div>
         <ul class="sns-contacts">
           <li class="contact">Linked In</li>
@@ -50,10 +51,46 @@
       flex-wrap: nowrap;
       justify-content: space-between;
 
+      .personal-infos {
+        .name {
+          padding: 0;
+          margin: 0;
+          margin-bottom: 0.25rem;
+          font-size: 2.25rem;
+          letter-spacing: 0.175rem;
+          font-weight: 900;
+          box-sizing: border-box;
+          line-height: 1.2;
+          text-transform: uppercase;
+        }
+
+        .job-title {
+          padding: 0;
+          margin: 0;
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+          box-sizing: border-box;
+          color: rgba(map.get($colors, "white"), 0.9);
+        }
+      }
+
       .sns-contacts {
         list-style: none;
         margin: 0;
         padding: 0;
+        font-size: 0.875rem;
+        margin-bottom: 1rem;
+        box-sizing: border-box;
+
+        .contact {
+          margin-bottom: 1rem !important;
+          color: rgba(map.get($colors, "white"), 0.6);
+          text-decoration: none;
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-size: 0.875rem;
+        }
       }
     }
   }
