@@ -3,19 +3,23 @@ import DownloadIcon from "@/assets/icons/download.svg?component";
 </script>
 
 <template>
-  <div class="resume">
+  <div class="resume-view">
     <HeroPresentation>
       <h1>Resume<DownloadButton>
           <DownloadIcon class="icon" />Download
           PDF Version
         </DownloadButton>
       </h1>
+      <div style="height: 160px;" />
     </HeroPresentation>
+    <section>
+      <Resume style="margin-top: -180px" />
+    </section>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.resume {
+.resume-view {
   box-sizing: border-box;
   position: relative;
 }
