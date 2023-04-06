@@ -2,22 +2,38 @@
   <article class="resume">
     <header class="resume-header">
       <!-- // image -->
-      <img src="https://i.picsum.photos/id/930/300/300.jpg?hmac=RgiMCCklyXwMJodQkK8gSZGtGM8nCWGi5HfgcPrADc4" />
+      <img
+        src="https://fastly.picsum.photos/id/930/300/300.jpg?hmac=RgiMCCklyXwMJodQkK8gSZGtGM8nCWGi5HfgcPrADc4"
+      />
       <!-- // Infos -->
       <div class="infos">
         <div class="personal-infos">
           <h1 class="name">Elliott Zwertvaegher</h1>
           <p class="job-title">Developer</p>
+          <p class="email">Elliott.zz59@gmail.com</p>
+          <p class="phone">010 - 9549 - 9295</p>
         </div>
-        <ul class="sns-contacts">
-          <li class="contact">Linked In</li>
-          <li class="contact">Github</li>
-          <li class="contact">Website</li>
-        </ul>
+        <SocialContacts :links="socialLinks" />
       </div>
     </header>
   </article>
 </template>
+
+<script lang="ts" setup>
+import GithubIcon from "@/assets/icons/github.svg?component";
+import LinkedInIcon from "@/assets/icons/linkedin.svg?component";
+import WebsiteIcon from "@/assets/icons/website.svg?component";
+
+const socialLinks = [
+  {
+    title: "LinkedIn",
+    url: "https://www.linkedin.com/in/elliott-zwertvaegher-8133a590/",
+    icon: LinkedInIcon,
+  },
+  { title: "Github", url: "https://github.com/shoko31", icon: GithubIcon },
+  { title: "Website", url: "https://zwertv.fr/", icon: WebsiteIcon },
+];
+</script>
 
 <style lang="scss" scoped>
 @use "@/assets/vars.scss" as *;
@@ -47,6 +63,7 @@
       color: map.get($colors, "white");
       padding: 1.5rem;
       display: flex;
+      gap: 20px;
       flex-direction: row;
       flex-wrap: nowrap;
       justify-content: space-between;
@@ -67,29 +84,22 @@
         .job-title {
           padding: 0;
           margin: 0;
+          font-weight: 400;
           font-size: 1.5rem;
           margin-bottom: 1rem;
           box-sizing: border-box;
           color: rgba(map.get($colors, "white"), 0.9);
         }
-      }
 
-      .sns-contacts {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        font-size: 0.875rem;
-        margin-bottom: 1rem;
-        box-sizing: border-box;
-
-        .contact {
-          margin-bottom: 1rem !important;
-          color: rgba(map.get($colors, "white"), 0.6);
-          text-decoration: none;
+        .email,
+        .phone {
           margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-          font-size: 0.875rem;
+          margin-bottom: 0.5rem;
+          color: rgba(map.get($colors, "white"), 0.6);
+
+          &:last-child {
+            margin-bottom: 1rem;
+          }
         }
       }
     }

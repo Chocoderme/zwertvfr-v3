@@ -19,7 +19,7 @@
     </section>
     <section>
       <div class="container small">
-        <ContactCard />
+        <ContactCard style="margin-bottom: 2rem" />
       </div>
     </section>
   </div>

@@ -26,6 +26,7 @@ declare module '@vue/runtime-core' {
     Resume: typeof import('./src/components/resume/Resume.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SocialContacts: typeof import('./src/components/resume/SocialContacts.vue')['default']
     SpeechCard: typeof import('./src/components/SpeechCard.vue')['default']
     SubmitButton: typeof import('./src/components/form/SubmitButton.vue')['default']
     TextAreaElement: typeof import('./src/components/form/TextAreaElement.vue')['default']
