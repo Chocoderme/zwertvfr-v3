@@ -1,10 +1,15 @@
 <template>
-  <a class="download-button">
+  <a :href="url" :download="fileName" class="download-button">
     <slot />
   </a>
 </template>
 
 <script lang="ts" setup>
+export interface Props {
+  url: string;
+  fileName: string;
+}
+defineProps<Props>();
 </script>
 
 <style lang="scss" scoped>
@@ -26,7 +31,8 @@
   -ms-user-select: none;
   border: none !important;
   border-radius: 0.375rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   color: map.get($colors, "white");
 
   &:not(:disabled) {
@@ -46,7 +52,11 @@
 
   &:disabled {
     cursor: not-allowed;
-    background-color: mix(map.get($colors, "white"), map.get($text-colors, "link"), 30%);
+    background-color: mix(
+      map.get($colors, "white"),
+      map.get($text-colors, "link"),
+      30%
+    );
   }
 }
 </style>

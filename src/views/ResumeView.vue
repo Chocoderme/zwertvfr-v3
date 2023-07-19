@@ -1,19 +1,25 @@
 <script setup lang="ts">
 import DownloadIcon from "@/assets/icons/download.svg?component";
+const resumeFileUrl = encodeURI(
+  `${import.meta.env.BASE_URL}resume_Elliott_ZWERTVAEGHER.pdf`
+);
 </script>
 
 <template>
   <div class="resume-view">
     <HeroPresentation>
-      <h1>Resume<DownloadButton>
-          <DownloadIcon class="icon" />Download
-          PDF Version
+      <h1>
+        Resume<DownloadButton
+          :url="resumeFileUrl"
+          file-name="Resume - Elliott ZWERTVAEGHER.pdf"
+        >
+          <DownloadIcon class="icon" />Download PDF Version
         </DownloadButton>
       </h1>
-      <div style="height: 160px;" />
+      <div style="height: 160px" />
     </HeroPresentation>
     <section>
-      <Resume style="margin-top: -180px" />
+      <ResumeComponent style="margin-top: -180px" />
     </section>
   </div>
 </template>

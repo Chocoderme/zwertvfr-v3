@@ -2,9 +2,7 @@
   <article class="resume">
     <header class="resume-header">
       <!-- // image -->
-      <img
-        src="https://fastly.picsum.photos/id/930/300/300.jpg?hmac=RgiMCCklyXwMJodQkK8gSZGtGM8nCWGi5HfgcPrADc4"
-      />
+      <img :src="ProfilePicture" />
       <!-- // Infos -->
       <div class="infos">
         <div class="personal-infos">
@@ -23,6 +21,7 @@
 import GithubIcon from "@/assets/icons/github.svg?component";
 import LinkedInIcon from "@/assets/icons/linkedin.svg?component";
 import WebsiteIcon from "@/assets/icons/website.svg?component";
+import ProfilePicture from "@/assets/imgs/elliott_profile.jpg";
 
 const socialLinks = [
   {

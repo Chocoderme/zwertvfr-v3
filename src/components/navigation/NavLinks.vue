@@ -1,19 +1,29 @@
 <template>
   <ul class="nav-links" @mouseleave="mouseOverLink(-1)">
-    <li v-for="(lnk, index) of navLinks" :key="index" class="nav-link" :class="{ active: route.path === lnk.url }"
-      :ref="linkRefs.set" @mouseover="mouseOverLink(index)" @click.stop="navigateTo(lnk.url)">
+    <li
+      v-for="(lnk, index) of navLinks"
+      :key="index"
+      class="nav-link"
+      :class="{ active: route.path === lnk.url }"
+      :ref="linkRefs.set"
+      @mouseover="mouseOverLink(index)"
+      @click.stop="navigateTo(lnk.url)"
+    >
       {{ lnk.name }}
     </li>
-    <div :style="{
-      width: `${width}px`,
-      left: `${left}px`,
-    }" class="link-slider" />
+    <div
+      :style="{
+        width: `${width}px`,
+        left: `${left}px`,
+      }"
+      class="link-slider"
+    />
   </ul>
 </template>
 
 <script lang="ts" setup>
 const navLinks = [
-  { name: "About", url: "/" },
+  // { name: "About", url: "/" },
   { name: "Resume", url: "/resume" },
   { name: "Projects", url: "/projects" },
   { name: "Contact", url: "/contact" },
