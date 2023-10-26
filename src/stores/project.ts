@@ -19,6 +19,18 @@ export interface Tag {
 export const useProjectStore = defineStore("project", () => {
   const projects = ref<Project[]>([
     {
+      title: "Memento Mori",
+      type: "Website",
+      tags: ["Vue3", "Typescript", "Pinia", "HTML/SCSS", "Frontend"],
+      summary: "Simple vue3 memento mori calendar website",
+      links: [
+        { icon: "github", url: "https://github.com/shoko31/memento-mori" },
+        { icon: "url", url: "https://zwertv.fr/memento-mori/" },
+      ],
+      date: new Date(2023, 10),
+      image: import.meta.env.BASE_URL + "portfolio/memento-mori.png",
+    },
+    {
       title: "CV en ligne (V2)",
       type: "Website",
       tags: ["Vue3", "Typescript", "Pinia", "HTML/SCSS", "Frontend"],
@@ -36,7 +48,7 @@ export const useProjectStore = defineStore("project", () => {
       summary: "Simple vue3 made website to visualize pathfinding algorithms",
       links: [
         { icon: "github", url: "https://github.com/shoko31/pathfinder" },
-        { icon: "url", url: "http://zwertv.fr/path-finder/" },
+        { icon: "url", url: "https://zwertv.fr/path-finder/" },
       ],
       date: new Date(2022, 8),
       image: import.meta.env.BASE_URL + "portfolio/pathfinder.png",
