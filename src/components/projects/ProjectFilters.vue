@@ -3,8 +3,9 @@
     <ul class="filters">
       <li
         v-for="tag of tags.filter(
-          (t) => !['Frontend', 'Backend'].includes(t.label)
+          (t) => !['Frontend', 'Backend', 'Library'].includes(t.label)
         )"
+        :key="tag.label"
         class="filter"
         :class="{
           active:
@@ -18,8 +19,9 @@
     </ul>
     <ul class="filters">
       <li
+        :key="tag.label"
         v-for="tag of tags.filter((t) =>
-          ['Frontend', 'Backend'].includes(t.label)
+          ['Frontend', 'Backend', 'Library'].includes(t.label)
         )"
         class="filter"
         :class="{
@@ -43,7 +45,7 @@ const tags = computed(() => [
   { label: "All", values: [] },
   ...projectStore.tags,
 ]);
-const tagClicked = (tag: typeof tags.value[number]) => {
+const tagClicked = (tag: (typeof tags.value)[number]) => {
   if (tag.label === "All") {
     projectStore.activeTags = [];
   } else {
