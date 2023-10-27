@@ -1,6 +1,12 @@
 <template>
   <span class="project-links">
-    <a :href="link.url" target="_blank" class="project-link" v-for="link of links">
+    <a
+      :href="link.url"
+      target="_blank"
+      class="project-link"
+      v-for="link of links"
+      :key="link.url"
+    >
       <component :is="getIcon(link)" />
     </a>
   </span>
@@ -10,17 +16,19 @@
 import type { Project } from "@/stores/project";
 
 import GithubIcon from "@/assets/icons/github.svg?component";
+import NpmIcon from "@/assets/icons/npm.svg?component";
 import ExternalUrlIcon from "@/assets/icons/external-link.svg?component";
 
 export interface Props {
-  links: Exclude<Project['links'], undefined>;
+  links: Exclude<Project["links"], undefined>;
 }
 defineProps<Props>();
 
-const getIcon = (link: Exclude<Project['links'], undefined>[number]) => {
-  if (link.icon === 'github') return GithubIcon;
+const getIcon = (link: Exclude<Project["links"], undefined>[number]) => {
+  if (link.icon === "github") return GithubIcon;
+  if (link.icon === "npm") return NpmIcon;
   return ExternalUrlIcon;
-}
+};
 </script>
 
 <style lang="scss" scoped>

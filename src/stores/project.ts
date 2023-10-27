@@ -1,4 +1,4 @@
-import { ref, computed, type Component } from "vue";
+import { ref, computed } from "vue";
 import { defineStore } from "pinia";
 
 export interface Project {
@@ -8,7 +8,7 @@ export interface Project {
   tags: string[];
   summary: string;
   date?: Date;
-  links?: { icon?: "github" | "url"; url: string }[];
+  links?: { icon?: "github" | "npm" | "url"; url: string }[];
 }
 
 export interface Tag {
@@ -18,6 +18,19 @@ export interface Tag {
 
 export const useProjectStore = defineStore("project", () => {
   const projects = ref<Project[]>([
+    {
+      title: "Vue-useOptimistic",
+      type: "Library",
+      tags: ["Vue3", "Typescript", "Library", "Frontend"],
+      summary:
+        "Vue3 optimistic values' hook, Inspired by react useOptimistic hook",
+      links: [
+        { icon: "github", url: "https://github.com/shoko31/vue-useoptimistic" },
+        { icon: "npm", url: "https://www.npmjs.com/package/vue-useoptimistic" },
+      ],
+      date: new Date(2023, 10),
+      image: import.meta.env.BASE_URL + "portfolio/vue-useoptimistic.svg",
+    },
     {
       title: "Memento Mori",
       type: "Website",
@@ -82,7 +95,10 @@ export const useProjectStore = defineStore("project", () => {
       tags: ["Typescript", "Sequelize", "Koa", "Reflect-metadata", "Backend"],
       summary:
         "Un module KoaJS open-source pour générer des routes REST en utilisant koa-router et les decorators (typescript)",
-      links: [{ icon: "github", url: "https://github.com/Chocoderme/koa-eko" }],
+      links: [
+        { icon: "github", url: "https://github.com/Chocoderme/koa-eko" },
+        { icon: "npm", url: "https://www.npmjs.com/package/koa-eko" },
+      ],
       date: new Date(2018, 8),
       image: import.meta.env.BASE_URL + "portfolio/koaeko.png",
     },
@@ -94,6 +110,7 @@ export const useProjectStore = defineStore("project", () => {
         "Un module KoaEko open-source permettant la génération de routes API scopées et fieldées",
       links: [
         { icon: "github", url: "https://github.com/Chocoderme/koa-eko-scope" },
+        { icon: "npm", url: "https://www.npmjs.com/package/koa-eko-scope" },
       ],
       date: new Date(2018, 8),
       image: import.meta.env.BASE_URL + "portfolio/koaekoscope.png",
@@ -106,6 +123,7 @@ export const useProjectStore = defineStore("project", () => {
         "Un module KoaEko open-source permettant la génération d'une documation API en ligne en utilisant les decorators",
       links: [
         { icon: "github", url: "https://github.com/Chocoderme/koa-eko-doc" },
+        { icon: "npm", url: "https://www.npmjs.com/package/koa-eko-doc" },
       ],
       date: new Date(2018, 8),
       image: import.meta.env.BASE_URL + "portfolio/koaekodoc.png",

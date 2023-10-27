@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 2000 2000">
+  <defs>
+    <style>.b{fill:none;stroke:#35495e;}.a{fill:none;stroke:#41b883;}</style>
+  </defs>
+  <rect width="100%" height="100%" fill="grey" />
+  <circle class="a" cx="1000" cy="1000" r="320" stroke-width="150" />
+  <circle class="b" cx="1000" cy="1000" r="180" stroke-width="140" />
+</svg>

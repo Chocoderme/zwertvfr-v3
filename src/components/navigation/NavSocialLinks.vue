@@ -1,6 +1,11 @@
 <template>
   <ul class="nav-social-links">
-    <li v-for="(lnk, index) of snsLinks" :key="index" class="nav-social-link" @click.stop="openLink(lnk)">
+    <li
+      v-for="(lnk, index) of snsLinks"
+      :key="index"
+      class="nav-social-link"
+      @click.stop="openLink(lnk)"
+    >
       <component :is="lnk.icon" />
     </li>
   </ul>
@@ -9,7 +14,7 @@
 <script lang="ts" setup>
 import GithubIcon from "@/assets/icons/github.svg";
 import LinkedInIcon from "@/assets/icons/linkedin.svg";
-import StackoverflowIcon from "@/assets/icons/stackoverflow.svg";
+// import StackoverflowIcon from "@/assets/icons/stackoverflow.svg";
 
 const snsLinks = [
   {
@@ -18,14 +23,14 @@ const snsLinks = [
     icon: LinkedInIcon,
   },
   { title: "Github", url: "https://github.com/shoko31", icon: GithubIcon },
-  {
-    title: "Stackoverflow",
-    url: "https://stackoverflow.com/users/3147985/shoko",
-    icon: StackoverflowIcon,
-  },
+  // {
+  //   title: "Stackoverflow",
+  //   url: "https://stackoverflow.com/users/3147985/shoko",
+  //   icon: StackoverflowIcon,
+  // },
 ];
 
-const openLink = (link: typeof snsLinks[number]) => {
+const openLink = (link: (typeof snsLinks)[number]) => {
   window.open(link.url, "_blank");
 };
 </script>
