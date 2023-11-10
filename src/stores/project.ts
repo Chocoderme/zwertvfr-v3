@@ -19,6 +19,22 @@ export interface Tag {
 export const useProjectStore = defineStore("project", () => {
   const projects = ref<Project[]>([
     {
+      title: "Ultimate Tic Tac Toe",
+      type: "Website",
+      tags: ["Vue3", "Pinia", "Typescript", "WebRTC", "Game Dev", "Frontend"],
+      summary:
+        "Play regular tic tac toe and ultimate tic tac toe with your friend!",
+      links: [
+        {
+          icon: "github",
+          url: "https://github.com/shoko31/ultimate-tic-tac-toe",
+        },
+        { icon: "url", url: "https://zwertv.fr/ultimate-tic-tac-toe/" },
+      ],
+      date: new Date(2023, 11),
+      image: import.meta.env.BASE_URL + "portfolio/ultimate-tic-tac-toe.png",
+    },
+    {
       title: "Vue-useOptimistic",
       type: "Open-source Library",
       tags: ["Vue3", "Typescript", "Library", "Frontend"],
