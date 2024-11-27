@@ -33,6 +33,12 @@ $text-colors: map.deep-merge(
   (
     "title": (
       "base": #434e5e,
+      "secondary": #818c9d,
+      "sub": #9ba1a9,
+    ),
+    "content": (
+      "base": #818c9d,
+      "sub": #9ba1a9,
     ),
     "base": #434e5e,
     "light": #8d9aad,

@@ -40,7 +40,9 @@
 
 html.dark {
   .card {
-    background-color: mix(#000000, map.get($colors, "white"), 10%);
+    background-color: mix(map.get($colors, "black"),
+        map.get($colors, "white"),
+        math.percentage(math.div(1, 10)));
   }
 }
 </style>

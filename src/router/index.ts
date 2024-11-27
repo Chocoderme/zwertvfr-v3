@@ -1,5 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
 
+export const RouteNames = {
+  PROJECTS: "projects",
+  RESUME: "resume",
+  CONTACT: "contact",
+} as const;
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -9,17 +15,17 @@ const router = createRouter({
     },
     {
       path: "/projects",
-      name: "projects",
+      name: RouteNames.PROJECTS,
       component: () => import("../views/ProjectsView.vue"),
     },
     {
       path: "/resume",
-      name: "resume",
+      name: RouteNames.RESUME,
       component: () => import("../views/ResumeView.vue"),
     },
     {
       path: "/contact",
-      name: "contact",
+      name: RouteNames.CONTACT,
       component: () => import("../views/ContactView.vue"),
     },
     {

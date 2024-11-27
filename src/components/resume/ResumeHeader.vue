@@ -7,8 +7,10 @@
       <div class="personal-infos">
         <h1 class="name">Elliott Zwertvaegher</h1>
         <p class="job-title">Developer</p>
-        <p class="email">Elliott.zz59@gmail.com</p>
-        <p class="phone">010 - 9549 - 9295</p>
+        <p class="email">
+          <a href="mailto:elliott.zwertvaegher@gmail.com">elliott.zz59@gmail.com</a>
+        </p>
+        <p class="phone"><a href="tel:+33759626122">07 59 62 61 22</a></p>
       </div>
       <SocialContacts :links="socialLinks" />
     </div>
@@ -69,6 +71,7 @@ const socialLinks = [
         box-sizing: border-box;
         line-height: 1.2;
         text-transform: uppercase;
+        text-wrap: wrap;
       }
 
       .job-title {
@@ -90,6 +93,38 @@ const socialLinks = [
         &:last-child {
           margin-bottom: 1rem;
         }
+
+        a {
+          color: inherit;
+          text-decoration: none;
+          cursor: pointer;
+          transition: color 0.1s ease-in-out;
+
+          &:hover {
+            text-decoration: underline;
+            color: rgba(map.get($colors, "white"), 1);
+          }
+        }
+      }
+    }
+  }
+}
+
+@container (max-width: 699px) {
+  .resume-header {
+    flex-direction: column;
+    height: auto;
+
+    img {
+      max-width: unset;
+    }
+
+    .infos {
+      flex-direction: column;
+      gap: 0;
+
+      .sns-contacts {
+        margin-bottom: 0;
       }
     }
   }

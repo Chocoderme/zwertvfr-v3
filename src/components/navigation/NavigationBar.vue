@@ -30,6 +30,7 @@
 <style lang="scss" scoped>
 @use "@/assets/vars.scss" as *;
 @use "sass:map";
+@use "sass:math";
 
 .flex-grow {
   flex-grow: 1;
@@ -48,5 +49,14 @@
   color: map.get($colors, "white");
   padding-left: 20px;
   padding-right: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+html.dark {
+  .navigation-bar {
+    background-color: mix(map.get($colors, "black"),
+        map.get($colors, "primary", "dark-3"),
+        math.percentage(math.div(3, 10)));
+  }
 }
 </style>

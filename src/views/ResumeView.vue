@@ -9,10 +9,7 @@ const resumeFileUrl = encodeURI(
   <div class="resume-view">
     <HeroPresentation>
       <h1>
-        Resume<DownloadButton
-          :url="resumeFileUrl"
-          file-name="Resume - Elliott ZWERTVAEGHER.pdf"
-        >
+        Resume<DownloadButton :url="resumeFileUrl" file-name="Resume - Elliott ZWERTVAEGHER.pdf">
           <DownloadIcon class="icon" />Download PDF Version
         </DownloadButton>
       </h1>

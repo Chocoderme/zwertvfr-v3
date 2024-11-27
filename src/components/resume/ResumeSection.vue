@@ -1,9 +1,11 @@
 <template>
   <section class="resume-section resume-introduction">
-    <slot name="title"
-      ><h2 class="resume-section-title">{{ title }}</h2></slot
-    >
-    <div class="resume-section-content"><slot name="default" /></div>
+    <slot name="title">
+      <h2 class="resume-section-title">{{ title }}</h2>
+    </slot>
+    <div class="resume-section-content">
+      <slot name="default" />
+    </div>
   </section>
 </template>
 
@@ -26,20 +28,28 @@ defineProps<Props>();
     font-weight: 700;
     text-transform: uppercase;
     padding-bottom: 1rem;
+    margin-top: 0;
 
     &:after {
       content: " ";
       position: absolute;
       left: 0;
-      bottom: 0;
+      bottom: 1px;
       width: 100%;
-      height: 1.5px;
+      height: 2px;
+      border-radius: 25px;
       background: map.get($text-colors, "light");
     }
   }
 
   .resume-section-content {
-    color: map.get($text-colors, "secondary");
+    font-size: 1rem;
+    font-weight: normal;
+    color: map.get($text-colors, "content", "base");
+
+    :deep(b) {
+      font-weight: 700;
+    }
   }
 }
 </style>

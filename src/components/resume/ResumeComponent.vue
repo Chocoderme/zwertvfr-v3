@@ -12,10 +12,12 @@
 @use "sass:map";
 
 .resume {
-  display: block;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1300px;
   box-sizing: border-box;
   margin: auto;
+  container-type: inline-size;
 }
 </style>
